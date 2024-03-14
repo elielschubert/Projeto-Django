@@ -14,6 +14,7 @@ def cria_funcionario(request):
             return redirect('lista_funcionarios')
     else:
         form = FuncionarioForm()
+    print(form)
     return render(request, 'funcionarios/cria_funcionario.html', {'form': form})
 
 def edita_funcionario(request, pk):

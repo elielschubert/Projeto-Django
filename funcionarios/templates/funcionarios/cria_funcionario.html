@@ -1,12 +1,65 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
-<div class="container">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'funcionarios/css/style.css' %}" />
+  <div class="container">
     <h1>Criar Novo Funcionário</h1>
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+      {% csrf_token %}
+      {% comment %} {{ form.as_p }} {% endcomment %}
+    
+      <div id="inputs">
+        <div>
+            <label for="id_nome">Nome:</label>
+            <input class="inputBox" type="text" name="nome" maxlength="100" required id="id_nome" placeholder="Insira seu nome"/>
+        </div>
+            
+        <div>
+            <label for="id_edv">EDV:</label>
+            <input type="text" name="edv" maxlength="8" required id="id_edv" placeholder="Insira seu EDV"/>
+        </div>
+
+        <div>
+            <label for="id_cargo">Cargo:</label>
+            <input type="text" name="cargo" maxlength="100" required id="id_cargo" placeholder="Insira seu cargo"/>
+        </div>
+            
+        <div>
+            <label for="id_setor">Setor:</label>
+            <input type="text" name="setor" maxlength="100" required id="id_setor" placeholder="Insira seu setor"/>
+        </div>
+
+        <div>
+        <label for="id_endereco">Endereço:</label>
+        <input type="text" name="endereco" maxlength="100" required id="id_endereco" placeholder="Insira seu endereço"/>
+        </div>
+            
+        <div>
+            <label for="id_horario_entrada">Horário de entrada:</label>
+            <input type="time" name="horario_entrada" required id="id_horario_entrada" placeholder="Insira o horário de entrada"/>
+        </div>
+
+        <div>
+            <label for="id_horario_saida">Horário de saída:</label>
+            <input type="time" name="horario_saida" required id="id_horario_saida" placeholder=""/>
+        </div>
+            
+        <div>
+            <label for="id_data_admissao">Data de admissão:</label>
+            <input type="date" name="data_admissao" required id="id_data_admissao" />
+        </div>
+    </div>
+
         <button type="submit" class="btn btn-primary">Salvar</button>
         <a href="{% url 'lista_funcionarios' %}" class="btn btn-secondary">Cancelar</a>
     </form>
-</div>
-{% endblock %}
+    </div>
+    {% endblock %}
+
+
+            
+
+            
+
+            
+
