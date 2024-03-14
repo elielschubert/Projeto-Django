@@ -1,0 +1,17 @@
+#inputs{
+    width: 50em;
+    margin-bottom: 1em;
+}
+
+#inputs div{
+    width: 50em;
+}
+
+input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: solid black 1px;
+}
+
+
